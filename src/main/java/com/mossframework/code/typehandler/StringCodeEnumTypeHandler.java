@@ -1,4 +1,4 @@
-package test.com.mossframework.code.typehandler;
+package com.mossframework.code.typehandler;
 
 import java.lang.reflect.Method;
 import java.sql.CallableStatement;
