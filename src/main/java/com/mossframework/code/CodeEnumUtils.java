@@ -10,9 +10,9 @@ import com.mossframework.beans.PropertyUtils;
  *
  */
 public class CodeEnumUtils {
-    private static final String PROPERTY_CODE = "code";
-    private static final String PROPERTY_STRING_CODE = "stringCode";
-    private static final String PROPERTY_LONG_CODE = "longCode";
+    public static final String PROPERTY_CODE = "code";
+    public static final String PROPERTY_STRING_CODE = "stringCode";
+    public static final String PROPERTY_LONG_CODE = "longCode";
     
     /**
      * Enum의 code값을 조회합니다.
