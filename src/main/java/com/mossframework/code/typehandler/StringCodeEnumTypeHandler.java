@@ -24,7 +24,8 @@ public class StringCodeEnumTypeHandler<E extends Enum<E>> extends BaseTypeHandle
         if (type == null) throw new IllegalArgumentException("Type argument cannot be null");
         this.type = type;
         Method codeMethod = BeanUtils.findMethod(type, CodeEnumUtils.PROPERTY_STRING_CODE);
-        if (codeMethod == null) throw new IllegalArgumentException(type.getSimpleName() + " does not have 'String getStringCode()' method.");
+        if (codeMethod == null || codeMethod.getReturnType() != String.class) 
+            throw new IllegalArgumentException(type.getSimpleName() + " does not have 'String getStringCode()' method.");
       }
 
     @Override

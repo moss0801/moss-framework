@@ -13,42 +13,41 @@ import org.springframework.beans.BeanUtils;
 import com.mossframework.code.CodeEnumUtils;
 
 /**
- * Code Enum과 DB가 통신하기 위한 TypeHandler<br />
- * int code만 지원합니다. stinrgCode, longCode등은 지원하지 않습니다.
+ * LongCode Enum과 DB가 통신하기 위한 TypeHandler
  * @author moss
  */
-public class CodeEnumTypeHandler<E extends Enum<E>> extends BaseTypeHandler<E>  {
+public class LongCodeEnumTypeHandler<E extends Enum<E>> extends BaseTypeHandler<E>  {
     
     private Class<E> type;
     
-    public CodeEnumTypeHandler(Class<E> type) {
+    public LongCodeEnumTypeHandler(Class<E> type) {
         if (type == null) throw new IllegalArgumentException("Type argument cannot be null");
         this.type = type;
-        Method codeMethod = BeanUtils.findMethod(type, CodeEnumUtils.PROPERTY_CODE);
-        if (codeMethod == null || codeMethod.getReturnType() != int.class) 
-            throw new IllegalArgumentException(type.getSimpleName() + " does not have 'int getCode()' method.");
+        Method codeMethod = BeanUtils.findMethod(type, CodeEnumUtils.PROPERTY_LONG_CODE);
+        if (codeMethod == null || codeMethod.getReturnType() != long.class) 
+            throw new IllegalArgumentException(type.getSimpleName() + " does not have 'long getLongCode()' method.");
       }
 
     @Override
     public void setNonNullParameter(PreparedStatement ps, int i, E parameter, JdbcType jdbcType) throws SQLException {
-        ps.setInt(i, CodeEnumUtils.getCode(parameter));
+        ps.setLong(i, CodeEnumUtils.getLongCode(parameter));
     }
 
     @Override
     public E getNullableResult(ResultSet rs, String columnName) throws SQLException {
-        int code = rs.getInt(columnName);
-        return CodeEnumUtils.getEnum(type, code);
+        long code = rs.getLong(columnName);
+        return CodeEnumUtils.getEnumFromLongCode(type, code);
     }
 
     @Override
     public E getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
-        int code = rs.getInt(columnIndex);
-        return CodeEnumUtils.getEnum(type, code);
+        long code = rs.getLong(columnIndex);
+        return CodeEnumUtils.getEnumFromLongCode(type, code);
     }
 
     @Override
     public E getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
-        int code = cs.getInt(columnIndex);
-        return CodeEnumUtils.getEnum(type, code);
+        long code = cs.getLong(columnIndex);
+        return CodeEnumUtils.getEnumFromLongCode(type, code);
     }
 } 
