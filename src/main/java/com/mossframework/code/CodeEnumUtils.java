@@ -30,9 +30,12 @@ public class CodeEnumUtils {
      * code값에 해당하는 value가 없는 경우 null이 반환됩니다.
      * @param <E>
      */
-    public static <E extends Enum<E>> E getEnum(Class<E> enumClass, int code) {
+    public static <E> E getEnum(Class<E> enumClass, int code) {
+        if (!enumClass.isEnum())
+            return null;
+        
         for (E value : enumClass.getEnumConstants()) {
-            if (getCode(value) == code)
+            if (getCode((Enum<?>) value) == code)
                 return (E) value;
         }
         return null;
