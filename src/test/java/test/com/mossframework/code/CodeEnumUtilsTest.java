@@ -3,7 +3,7 @@ package test.com.mossframework.code;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.mossframework.code.CodeEnumUtils;
+import com.mossframework.code.util.CodeEnumUtils;
 
 public class CodeEnumUtilsTest {
     

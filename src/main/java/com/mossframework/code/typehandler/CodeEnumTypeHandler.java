@@ -10,7 +10,7 @@ import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
 import org.springframework.beans.BeanUtils;
 
-import com.mossframework.code.CodeEnumUtils;
+import com.mossframework.code.util.CodeEnumUtils;
 
 /**
  * Code Enum과 DB가 통신하기 위한 TypeHandler<br />
@@ -27,7 +27,7 @@ public class CodeEnumTypeHandler<E extends Enum<E>> extends BaseTypeHandler<E>  
         Method codeMethod = BeanUtils.findMethod(type, CodeEnumUtils.PROPERTY_CODE);
         if (codeMethod == null || codeMethod.getReturnType() != int.class) 
             throw new IllegalArgumentException(type.getSimpleName() + " does not have 'int getCode()' method.");
-      }
+        }
 
     @Override
     public void setNonNullParameter(PreparedStatement ps, int i, E parameter, JdbcType jdbcType) throws SQLException {

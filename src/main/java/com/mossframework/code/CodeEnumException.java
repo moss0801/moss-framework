@@ -8,7 +8,7 @@ package com.mossframework.code;
 public class CodeEnumException extends RuntimeException {
     private static final long serialVersionUID = 1726445749533968765L;
     
-    CodeEnumException(String message, Throwable cause) {
+    public CodeEnumException(String message, Throwable cause) {
         super(message, cause);
     }
 

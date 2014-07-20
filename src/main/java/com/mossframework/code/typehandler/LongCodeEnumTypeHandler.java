@@ -10,7 +10,7 @@ import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
 import org.springframework.beans.BeanUtils;
 
-import com.mossframework.code.CodeEnumUtils;
+import com.mossframework.code.util.CodeEnumUtils;
 
 /**
  * LongCode Enum과 DB가 통신하기 위한 TypeHandler
