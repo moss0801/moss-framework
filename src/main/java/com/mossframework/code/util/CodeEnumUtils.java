@@ -2,6 +2,8 @@ package com.mossframework.code.util;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.beans.BeanUtils;
 
@@ -21,12 +23,57 @@ public class CodeEnumUtils {
     public static final String PROPERTY_STRING_CODE = "stringCode";
     public static final String PROPERTY_LONG_CODE = "longCode";
     
+    @SuppressWarnings("unchecked")
+    public static <T> Map<Integer, T> getCodeMap(Class<T> enumClass) {
+        Map<Integer, T> codeMap = new HashMap<Integer, T>();
+        Method getCodeMethod = findCodeMethod(enumClass, CodeType.Code);
+        if (null == getCodeMethod)
+            return codeMap;
+        
+        for (Object value : enumClass.getEnumConstants()) {
+            try {
+                codeMap.put((Integer)getCodeMethod.invoke(value), (T) value);
+            } catch (Exception e) { }
+        }
+        return codeMap;
+    }
+    
+    @SuppressWarnings("unchecked")
+    public static <T> Map<String, T> getStringCodeMap(Class<T> enumClass) {
+        Map<String, T> codeMap = new HashMap<String, T>();
+        Method getCodeMethod = findCodeMethod(enumClass, CodeType.StringCode);
+        if (null == getCodeMethod)
+            return codeMap;
+        
+        for (Object value : enumClass.getEnumConstants()) {
+            try {
+                codeMap.put((String)getCodeMethod.invoke(value), (T) value);
+            } catch (Exception e) { }
+        }
+        return codeMap;
+    }
+    
+    @SuppressWarnings("unchecked")
+    public static <T> Map<Long, T> getLongCodeMap(Class<T> enumClass) {
+        Map<Long, T> codeMap = new HashMap<Long, T>();
+        Method getCodeMethod = findCodeMethod(enumClass, CodeType.LongCode);
+        if (null == getCodeMethod)
+            return codeMap;
+        
+        for (Object value : enumClass.getEnumConstants()) {
+            try {
+                codeMap.put((Long)getCodeMethod.invoke(value), (T) value);
+            } catch (Exception e) { }
+        }
+        return codeMap;
+    }
+    
     /**
      * Enum의 code값을 조회합니다.
      */
     public static int getCode(Enum<?> value) {
         try {
-            return (int) PropertyUtils.getProperty(value, PROPERTY_CODE);
+            return (int) PropertyUtils.getSimpleProperty(value, PROPERTY_CODE);
         } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
             throw new CodeEnumException("fail to get code from " + (null == value ? null : value.getClass()), e);
         }
@@ -66,6 +113,17 @@ public class CodeEnumUtils {
             }
         }
         return null;
+    }
+    
+    @SuppressWarnings("unchecked")
+    public static <E> E getEnumWithGetEnumMethod(Class<E> enumClass, Method getEnumMethod, int code) {
+        if (!enumClass.isEnum())
+            return null;
+        try {
+            return (E) getEnumMethod.invoke(null, code);
+        } catch (Exception e) {
+            return null;
+        }
     }
     
     /**

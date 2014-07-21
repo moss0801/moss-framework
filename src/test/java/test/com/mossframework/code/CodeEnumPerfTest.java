@@ -4,6 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -215,7 +216,310 @@ public class CodeEnumPerfTest {
         Code198(198),
         Code199(199),
         Code200(200),
+        Code201(201),
+        Code202(202),
+        Code203(203),
+        Code204(204),
+        Code205(205),
+        Code206(206),
+        Code207(207),
+        Code208(208),
+        Code209(209),
+        Code210(210),
+        Code211(211),
+        Code212(212),
+        Code213(213),
+        Code214(214),
+        Code215(215),
+        Code216(216),
+        Code217(217),
+        Code218(218),
+        Code219(219),
+        Code220(220),
+        Code221(221),
+        Code222(222),
+        Code223(223),
+        Code224(224),
+        Code225(225),
+        Code226(226),
+        Code227(227),
+        Code228(228),
+        Code229(229),
+        Code230(230),
+        Code231(231),
+        Code232(232),
+        Code233(233),
+        Code234(234),
+        Code235(235),
+        Code236(236),
+        Code237(237),
+        Code238(238),
+        Code239(239),
+        Code240(240),
+        Code241(241),
+        Code242(242),
+        Code243(243),
+        Code244(244),
+        Code245(245),
+        Code246(246),
+        Code247(247),
+        Code248(248),
+        Code249(249),
+        Code250(250),
+        Code251(251),
+        Code252(252),
+        Code253(253),
+        Code254(254),
+        Code255(255),
+        Code256(256),
+        Code257(257),
+        Code258(258),
+        Code259(259),
+        Code260(260),
+        Code261(261),
+        Code262(262),
+        Code263(263),
+        Code264(264),
+        Code265(265),
+        Code266(266),
+        Code267(267),
+        Code268(268),
+        Code269(269),
+        Code270(270),
+        Code271(271),
+        Code272(272),
+        Code273(273),
+        Code274(274),
+        Code275(275),
+        Code276(276),
+        Code277(277),
+        Code278(278),
+        Code279(279),
+        Code280(280),
+        Code281(281),
+        Code282(282),
+        Code283(283),
+        Code284(284),
+        Code285(285),
+        Code286(286),
+        Code287(287),
+        Code288(288),
+        Code289(289),
+        Code290(290),
+        Code291(291),
+        Code292(292),
+        Code293(293),
+        Code294(294),
+        Code295(295),
+        Code296(296),
+        Code297(297),
+        Code298(298),
+        Code299(299),
+        Code300(300),
+        Code301(301),
+        Code302(302),
+        Code303(303),
+        Code304(304),
+        Code305(305),
+        Code306(306),
+        Code307(307),
+        Code308(308),
+        Code309(309),
+        Code310(310),
+        Code311(311),
+        Code312(312),
+        Code313(313),
+        Code314(314),
+        Code315(315),
+        Code316(316),
+        Code317(317),
+        Code318(318),
+        Code319(319),
+        Code320(320),
+        Code321(321),
+        Code322(322),
+        Code323(323),
+        Code324(324),
+        Code325(325),
+        Code326(326),
+        Code327(327),
+        Code328(328),
+        Code329(329),
+        Code330(330),
+        Code331(331),
+        Code332(332),
+        Code333(333),
+        Code334(334),
+        Code335(335),
+        Code336(336),
+        Code337(337),
+        Code338(338),
+        Code339(339),
+        Code340(340),
+        Code341(341),
+        Code342(342),
+        Code343(343),
+        Code344(344),
+        Code345(345),
+        Code346(346),
+        Code347(347),
+        Code348(348),
+        Code349(349),
+        Code350(350),
+        Code351(351),
+        Code352(352),
+        Code353(353),
+        Code354(354),
+        Code355(355),
+        Code356(356),
+        Code357(357),
+        Code358(358),
+        Code359(359),
+        Code360(360),
+        Code361(361),
+        Code362(362),
+        Code363(363),
+        Code364(364),
+        Code365(365),
+        Code366(366),
+        Code367(367),
+        Code368(368),
+        Code369(369),
+        Code370(370),
+        Code371(371),
+        Code372(372),
+        Code373(373),
+        Code374(374),
+        Code375(375),
+        Code376(376),
+        Code377(377),
+        Code378(378),
+        Code379(379),
+        Code380(380),
+        Code381(381),
+        Code382(382),
+        Code383(383),
+        Code384(384),
+        Code385(385),
+        Code386(386),
+        Code387(387),
+        Code388(388),
+        Code389(389),
+        Code390(390),
+        Code391(391),
+        Code392(392),
+        Code393(393),
+        Code394(394),
+        Code395(395),
+        Code396(396),
+        Code397(397),
+        Code398(398),
+        Code399(399),
+        Code400(400),
+        Code401(401),
+        Code402(402),
+        Code403(403),
+        Code404(404),
+        Code405(405),
+        Code406(406),
+        Code407(407),
+        Code408(408),
+        Code409(409),
+        Code410(410),
+        Code411(411),
+        Code412(412),
+        Code413(413),
+        Code414(414),
+        Code415(415),
+        Code416(416),
+        Code417(417),
+        Code418(418),
+        Code419(419),
+        Code420(420),
+        Code421(421),
+        Code422(422),
+        Code423(423),
+        Code424(424),
+        Code425(425),
+        Code426(426),
+        Code427(427),
+        Code428(428),
+        Code429(429),
+        Code430(430),
+        Code431(431),
+        Code432(432),
+        Code433(433),
+        Code434(434),
+        Code435(435),
+        Code436(436),
+        Code437(437),
+        Code438(438),
+        Code439(439),
+        Code440(440),
+        Code441(441),
+        Code442(442),
+        Code443(443),
+        Code444(444),
+        Code445(445),
+        Code446(446),
+        Code447(447),
+        Code448(448),
+        Code449(449),
+        Code450(450),
+        Code451(451),
+        Code452(452),
+        Code453(453),
+        Code454(454),
+        Code455(455),
+        Code456(456),
+        Code457(457),
+        Code458(458),
+        Code459(459),
+        Code460(460),
+        Code461(461),
+        Code462(462),
+        Code463(463),
+        Code464(464),
+        Code465(465),
+        Code466(466),
+        Code467(467),
+        Code468(468),
+        Code469(469),
+        Code470(470),
+        Code471(471),
+        Code472(472),
+        Code473(473),
+        Code474(474),
+        Code475(475),
+        Code476(476),
+        Code477(477),
+        Code478(478),
+        Code479(479),
+        Code480(480),
+        Code481(481),
+        Code482(482),
+        Code483(483),
+        Code484(484),
+        Code485(485),
+        Code486(486),
+        Code487(487),
+        Code488(488),
+        Code489(489),
+        Code490(490),
+        Code491(491),
+        Code492(492),
+        Code493(493),
+        Code494(494),
+        Code495(495),
+        Code496(496),
+        Code497(497),
+        Code498(498),
+        Code499(499),
+        Code500(500),
         ;
+        
+        private static Map<Integer, TestEnum> codeMap = 
+                CodeEnumUtils.getCodeMap(TestEnum.class);
         
         TestEnum(int code) {
             this.code = code;
@@ -228,6 +532,7 @@ public class CodeEnumPerfTest {
         }
         
         public static TestEnum getEnum(int code) {
+            //return codeMap.get(code);
             for (TestEnum value : TestEnum.values()) {
                 if (value.getCode() == code)
                     return value;
@@ -289,13 +594,15 @@ public class CodeEnumPerfTest {
         System.out.println(a);
     }
     
+    int code = 1;
+    
     @Test
     public void getEnumWithMethod() {
         System.out.println("getEnumWithMethod");
         long start = System.currentTimeMillis();
         for (int i=0; i<100000; i++)
         {
-            CodeEnumUtils.getEnumWithMethod(TestEnum.class, 200);
+            TestEnum a = CodeEnumUtils.getEnumWithMethod(TestEnum.class, code);
         }
         System.out.println(System.currentTimeMillis() - start);
     }
@@ -303,10 +610,11 @@ public class CodeEnumPerfTest {
     @Test
     public void getEnumWithMap() {
         System.out.println("getEnumWithMap");
+        Method method = CodeEnumUtils.findGetEnumMethod(MapEnum.class, CodeType.Code);
         long start = System.currentTimeMillis();
         for (int i=0; i<100000; i++)
         {
-            CodeEnumUtils.getEnumWithMethod(MapEnum.class, 200);
+            MapEnum a = CodeEnumUtils.getEnumWithGetEnumMethod(MapEnum.class, method, code);
         }
         System.out.println(System.currentTimeMillis() - start);
     }
@@ -318,7 +626,7 @@ public class CodeEnumPerfTest {
         Method getCodeMethod = CodeEnumUtils.findCodeMethod(TestEnum.class, CodeType.Code);
         for (int i=0; i<100000; i++)
         {
-            CodeEnumUtils.getEnumWithGetCodeMethod(TestEnum.class, getCodeMethod, 200);
+            TestEnum a = CodeEnumUtils.getEnumWithGetCodeMethod(TestEnum.class, getCodeMethod, code);
         }
         System.out.println(System.currentTimeMillis() - start);
     }
@@ -329,7 +637,7 @@ public class CodeEnumPerfTest {
         long start = System.currentTimeMillis();
         for (int i=0; i<100000; i++)
         {
-            CodeEnumUtils.getEnum(TestEnum.class, 200);
+            TestEnum a = CodeEnumUtils.getEnum(TestEnum.class, code);
         }
         System.out.println(System.currentTimeMillis() - start);
     }
@@ -339,9 +647,20 @@ public class CodeEnumPerfTest {
     public void getEnum() {
         System.out.println("getEnum");
         long start = System.currentTimeMillis();
-        for (int i=0; i<100000; i++)
+        for (int i=0; i<1000000; i++)
         {
-            TestEnum.getEnum(200);
+            TestEnum a = TestEnum.getEnum(code);
+        }
+        System.out.println(System.currentTimeMillis() - start);
+    }
+    
+    @Test
+    public void getEnumMap() {
+        System.out.println("getEnumMap");
+        long start = System.currentTimeMillis();
+        for (int i=0; i<1000000; i++)
+        {
+            MapEnum a = MapEnum.getEnum(code);
         }
         System.out.println(System.currentTimeMillis() - start);
     }
