@@ -49,6 +49,43 @@ public class CodeEnumUtils {
     }
     
     /**
+     * Enum의 code와 일치하는 value를 반환합니다.<br />
+     * code값에 해당하는 value가 없는 경우 null이 반환됩니다.
+     * @param <E>
+     */
+    public static <E> E getEnumWithMethod(Class<E> enumClass, int code) {
+        if (!enumClass.isEnum())
+            return null;
+        Method method = BeanUtils.findMethod(enumClass, "getcode");
+        for (E value : enumClass.getEnumConstants()) {
+            try {
+                if ((int) method.invoke(null, value) == code)
+                    return (E) value;
+            } catch (Exception e) {
+                return null;
+            }
+        }
+        return null;
+    }
+    
+    /**
+     * Enum의 code와 일치하는 value를 반환합니다.<br />
+     * code값에 해당하는 value가 없는 경우 null이 반환됩니다.
+     * @param <E>
+     */
+    public static <E> E getEnumWithGetCodeMethod(Class<E> enumClass, Method getCodeMethod, int code) {
+        for (E value : enumClass.getEnumConstants()) {
+            try {
+                if ((int) getCodeMethod.invoke(value) == code)
+                    return (E) value;
+            } catch (Exception e) {
+                return null;
+            }
+        }
+        return null;
+    }
+    
+    /**
      * Enum의 stringCode를 조회합니다.
      */
     public static String getStringCode(Enum<?> value) {
